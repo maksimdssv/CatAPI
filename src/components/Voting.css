@@ -1,0 +1,45 @@
+.container {
+    width: 680px;
+    min-height: 782px;
+    background: var(--button-background);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-img {
+    width: 640px;
+    height: 360px;
+
+    margin-bottom: 52px;
+    margin-top: 20px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.voting-container {
+    top: 318px;
+    right: 196px;
+    position: absolute;
+
+    max-width: 248px;
+    height: 80px;
+}
+
+.voting-buttons {
+    overflow: hidden;
+    background-color: var(--button-background);
+
+    outline: 4px solid #FFFFFF;
+    border-radius: 20px;
+}
+
+.user-logs {
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+}

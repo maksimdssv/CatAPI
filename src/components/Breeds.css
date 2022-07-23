@@ -1,0 +1,77 @@
+.selectors {
+    display: flex;
+    margin-left: 10px;
+}
+
+.select-all {
+    box-sizing: border-box;
+    height: 40px;
+
+    background: #F8F8F7;
+    border-radius: 10px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    padding: 8px 0 8px 10px;
+
+    outline: none;
+    border: 2px solid #FFFFFF;
+
+
+    color: #8C8C8C;
+}
+
+.select-all:focus {
+    border: 2px solid #FFFFFF;;
+}
+
+.select-all:hover {
+    border: 2px solid #FBE0DC;
+}
+.select-breeds {
+    width: 226px;
+}
+
+.select-limit {
+    width: 101px;
+    margin-left: 10px;
+}
+
+.sort-btn {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+
+    border: none;
+    background-color: #F8F8F7;
+    border-radius: 10px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin-left: 10px;
+}
+
+.descending {
+    background-image: url(../images/sort-20.svg);
+}
+
+.ascending {
+    background-image: url(../images/soft-revert-20.svg);
+}
+
+.descending.active {
+    background-image: url(../images/sort-color-20.svg);
+    border: 2px solid #FBE0DC;
+}
+
+.ascending.active {
+    background-image: url(../images/sort-revert-color-20.svg);
+    border: 2px solid #FBE0DC;
+}
+
+.sort-btn:hover {
+    border: 2px solid #FBE0DC;
+}

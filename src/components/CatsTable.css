@@ -1,0 +1,13 @@
+.Search {
+    margin-top:20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+
+    color: #8C8C8C;
+}
+
+.Search span {
+    font-weight: 400;
+    color: #1D1D1D;
+}

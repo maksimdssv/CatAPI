@@ -1,0 +1,61 @@
+.Button {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    margin: 0 5px 0 5px;
+}
+
+.Button:nth-child(4) {
+    margin-right: 0;
+}
+
+.Button:hover {
+    background-color: var(--hover-background);
+}
+
+.Button:active {
+    background-color: var(--active-background);
+}
+
+.likes {
+    background: url(../images/likes.svg) center no-repeat var(--button-background);
+}
+
+.likes:active {
+    background-image: url(../images/likes-white.svg);
+}
+
+.favourites {
+    background: url(../images/fav.svg) center no-repeat var(--button-background);
+}
+
+.favourites:active {
+    background-image: url(../images/fav-white.svg);
+}
+
+.dislikes {
+    background: url(../images/dislikes.svg) center no-repeat var(--button-background);
+}
+
+.dislikes:active {
+    background-image: url(../images/dislikes-white.svg);
+}
+
+.Button.active {
+    background-color: var(--active-background);
+}
+
+.likes.active {
+    background-image: url(../images/likes-white.svg);
+}
+
+.favourites.active {
+    background-image: url(../images/fav-white.svg);
+}
+
+.dislikes.active {
+    background-image: url(../images/dislikes-white.svg);
+}

@@ -1,0 +1,48 @@
+.title-container {
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+
+.back-btn {
+    overflow: hidden;
+    background-image: url(../images/back.svg);
+    margin-right: 10px;
+}
+
+.back-btn:hover {
+    background-image: url(../images/back-white-20.svg);
+}
+
+.title-name {
+    box-sizing: border-box;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    height: 40px;
+
+    padding: 5px 30px 5px 30px;
+
+    background: #FF868E;
+    border-radius: 10px;
+}
+
+.title-name-alt {
+    background: var(--hover-background);
+}
+
+.title {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+}
+
+.title-name-alt .title{
+    color: #FF868E;
+}

@@ -1,0 +1,32 @@
+.background-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    position: relative;
+    right: 0;
+}
+
+.img-container {
+    position: absolute;
+    overflow: hidden;
+    height: 900px;
+}
+
+.background {
+    width: 680px;
+    height: 840px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FBE0DC;
+    border-radius: 20px;
+}
+
+.girl-img {
+    position: relative;
+    width: 895px;
+    height: 1024px;
+    right: 0;
+    top: -60px;
+}
+

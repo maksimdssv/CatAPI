@@ -1,0 +1,36 @@
+.voting-btn {
+    width: 80px;
+    height: 80px;
+    border: none;
+}
+
+.like {
+    background: url(../images/likes-white.svg) no-repeat center #97EAB9;
+}
+
+.dislike {
+    background: url(../images/dislikes-white.svg) no-repeat center #FFD280;
+}
+
+.favourite {
+    margin: 0 4px 0 4px;
+    background: url(../images/fav-white.svg) no-repeat center #FF868E;
+}
+
+.like:hover {
+    background: url(../images/like-color-30.svg) no-repeat center rgba(151, 234, 185, 0.3);
+}
+.favourite:hover {
+    background: url(../images/fav.svg) no-repeat center rgba(255, 134, 142, 0.3);
+}
+.dislike:hover {
+    background: url(../images/dislike-color-30.svg) no-repeat center rgba(255, 210, 128, 0.3);
+}
+
+.favourite:active {
+    background-image: url(../images/fav-full-white-30.svg);
+}
+
+.favourite-active {
+    background-image: url(../images/fav-full-white-30.svg);
+}

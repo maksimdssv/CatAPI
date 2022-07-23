@@ -1,0 +1,63 @@
+.section {
+    display: inline-block;
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    width: 446px;
+}
+
+.section-img {
+    width: 138px;
+    height: 198px;
+    box-sizing: border-box;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 138px;
+    height: 36px;
+    margin: 10px auto;
+    border: 0;
+    background: var(--button-background);
+    border-radius: 10px;
+    display: block;
+
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #FF868E;
+    text-transform: uppercase;
+}
+
+.section:hover .section-img {
+    border: 4px solid #FFFFFF;
+}
+
+.section:hover .btn {
+    background: var(--hover-background);
+}
+
+.section:active .section-img {
+    border: 4px solid #FBE0DC;
+}
+
+.section:active .btn{
+    background: var(--active-background);
+    color: #FFFFFF;
+}
+
+.section.active .btn {
+    background: var(--active-background);
+    color: #FFFFFF;
+}
+
+.section.active:hover .btn {
+    background: var(--active-background);
+}
