@@ -89,7 +89,7 @@ function Gallery(props) {
         </div>
         <div>
             {loadImgs ? <Loader/> :
-                <CatDisplay cats={images}/>}
+                <CatDisplay cats={images} type={"favourites"}/>}
         </div>
 
     </div>

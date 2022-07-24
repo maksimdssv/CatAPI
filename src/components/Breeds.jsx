@@ -6,26 +6,30 @@ import Loader from "./Loader";
 
 function Breeds(props) {
     const [loading, setLoad] = useState(true);
-    const [breeds, setBreeds] = useState([]);
+    const [cats, setCats] = useState([]);
     const [currentBreed, setCurrentBreed] = useState("");
     const [limit, setLimit] = useState(5);
     const [order, setOrder] = useState('asc');
+    const [breeds, setBreeds] = useState([]);
+    const [i, setI] = useState(0);
 
     function getAllBreeds(props) {
         fetch('/breeds').then(res => res.json()).then((dataBreeds) => {
-            setBreeds(dataBreeds);
+            setCats(dataBreeds);
+            dataBreeds.forEach((item) => {
+                breeds.push(item.name);
+            });
         }).then(() => {
-            setLoad(false)
+            setLoad(false);
         });
     }
 
-    function handleOrder(props){
+    function handleOrder(props) {
         setOrder((prevValue) => {
-            if (prevValue === props){
+            if (prevValue === props) {
                 return props;
-            }
-            else {
-                setBreeds(breeds.reverse());
+            } else {
+                setCats(cats.reverse());
                 return props;
             }
         });
@@ -43,7 +47,7 @@ function Breeds(props) {
                     setCurrentBreed(e.target.value)
                 }}>
                     <option value="">All breeds</option>
-                    {breeds.map((breed, index) => <option key={index} value={breed.name}>{breed.name}</option>)}
+                    {breeds.map((breed, index) => <option key={index} value={breed}>{breed}</option>)}
                 </select>
                 <select name={"Limit"} className="select-all select-limit" onChange={(e) => {
                     setLimit(Number(e.target.value))
@@ -54,12 +58,27 @@ function Breeds(props) {
                     <option value="20">20</option>
                 </select>
             </div>
-            <button className={"sort-btn descending" + (order === "desc" ? " active" : "")} onClick={() => {handleOrder("desc");}}/>
-            <button className={"sort-btn ascending" + (order === "asc" ? " active" : "")} onClick={() => {handleOrder("asc")}}/>
+            <button className={"sort-btn descending" + (order === "desc" ? " active" : "")} onClick={() => {
+                handleOrder("desc");
+            }}/>
+            <button className={"sort-btn ascending" + (order === "asc" ? " active" : "")} onClick={() => {
+                handleOrder("asc")
+            }}/>
         </div>
-        <CatDisplay cats={breeds.filter((item) => {
+        <CatDisplay cats={cats.filter((item) => {
             return item.name === (currentBreed === "" ? item.name : currentBreed);
-        }).slice(0, limit)} breedName={true} clickAction={props.handleClick}/>
+        }).slice(limit * i, limit * (i + 1))} type={"Breeds"} clickAction={props.handleClick}/>
+        <div className="btn-container">
+            <button className="page-btn prev" onClick={() => {
+                setI((e) => (e === 0 ? e : e - 1))
+            }}>Prev
+                <div className={"tess"}/>
+            </button>
+            <button className="page-btn next" onClick={() => {
+                setI((e) => e + 1)
+            }}><p>Next</p>
+            </button>
+        </div>
     </div>
 }
 

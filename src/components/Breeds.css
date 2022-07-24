@@ -75,3 +75,57 @@
 .sort-btn:hover {
     border: 2px solid #FBE0DC;
 }
+
+.btn-container {
+    margin-top: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-btn {
+    box-sizing: border-box;
+    width: 122px;
+    height: 40px;
+    margin-right: 40px;
+    padding: 12px 30px 12px 56px;
+
+    background-color: #F8F8F7;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 10px;
+    background-image: url(../images/back.svg);
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+    color: #8C8C8C;
+}
+
+.prev {
+    background-position: 22px;
+}
+
+.next {
+    background-position: 22px;
+    transform: scaleX(-1);
+}
+
+.next * {
+    transform: scaleX(-1);
+}
+
+.page-btn:hover {
+    background-color: #FBE0DC;
+    color: #FF868E;
+}
+
+.page-btn:active {
+    background-image: url(../images/back-white-20.svg);
+    background-color: var(--active-background);
+    color: var(--button-background);
+}

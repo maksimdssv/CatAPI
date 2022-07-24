@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Menu from "./Menu";
 import Start from './Start';
 import "./App.css"
@@ -31,16 +31,20 @@ function App() {
 
     }
 
-    return (<div className="page">
-        <Menu handleClick={handleClick} sectionName={section}/>
-        <div className={section === "Start" ? 'invisible' : ""}>
-            <Header handleClick={handleClick} sectionName={section}/>
-            <div className="container">
+    return (<div>
+        <div className={"upload-background"}>
+
+        </div>
+        <div className="page">
+
+            <Menu handleClick={handleClick} sectionName={section}/>
+            <div className={section === "Start" ? 'invisible' : ""}>
+                <Header handleClick={handleClick} sectionName={section}/>
                 <Section sectionName={section} handleBack={goBack} handleClick={handleClick}/>
             </div>
-        </div>
 
-        {section === "Start" && <Start/>}
+            {section === "Start" && <Start/>}
+        </div>
     </div>);
 }
 

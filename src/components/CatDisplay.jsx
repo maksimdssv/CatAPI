@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import CatButton from "./CatButton";
 import './CatDisplay.css';
 
 function CatDisplay(props) {
@@ -12,34 +13,11 @@ function CatDisplay(props) {
     }
 
     function getBreedInfo(id) {
-        fetch('/breed/' + id).then(() => {props.clickAction("BreedInfo")})
+        fetch('/breed/' + id).then(() => {
+            props.clickAction("BreedInfo");
+        })
     }
 
-    function addToFavourites(){
-
-    }
-
-    function handleSection(isSection, item){
-        if(isSection){
-            return <div className="cat-wrapper">
-                <img className="test-img" src={item.img !== undefined ? item.img.url : ""} alt="cat image"/>
-
-                <div className={"cat-name-container" + (props.breedName ? "" : " fav-icon-container")}>
-                    <button className={"cat-btn" + (props.breedName ? " cat-name-btn" : " fav-icon")}
-                            name={props.breedName ? "BreedInfo" : ""}>{item.name}</button>
-                </div>
-            </div>
-        }
-        else{
-            return <div className="cat-wrapper">
-                <img className="test-img" src={item.url} alt="cat image"/>
-
-                <div className={"cat-name-container fav-icon-container"}>
-                    <button className={"cat-btn fav-icon"}/>
-                </div>
-            </div>
-        }
-    }
 
     return newCats.map((catArr, arrIndex) => {
         let reverse = '';
@@ -56,14 +34,12 @@ function CatDisplay(props) {
                         additionalClasses += 'big-cat' + (reverse !== '' ? " bg-rev" : "");
                     }
                     return <div key={index} className={"cat " + additionalClasses} onClick={() => {
-                        if(props.breedName !== undefined){
+                        if (props.type === "Breeds" || props.type === "Search") {
+                            ;
                             getBreedInfo(item.id);
                         }
-                        else{
-                         addToFavourites();
-                        }
                     }}>
-                        {handleSection(props.breedName, item)}
+                        <CatButton type={props.type} item={item} startState={props.startState}/>
                     </div>
                 }
             })}
