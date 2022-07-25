@@ -42,7 +42,10 @@ function Gallery(props) {
         {loading && <Loader/>}
         <div className="flex-container">
             <Title sectionName={"Gallery"} handleBack={props.handleBack}/>
-            <button className="upload-btn">Upload</button>
+            <button className="upload-btn" onClick={() => {
+                props.handleUpload(true)
+            }}>Upload
+            </button>
         </div>
         <div className="gallery-selectors">
             <div className="selector-container">

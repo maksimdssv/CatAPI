@@ -11,7 +11,7 @@ function Section(props) {
 
 
     return <div className="container">
-        {sectionName === "Gallery" && <Gallery handleBack={props.handleBack}/>}
+        {sectionName === "Gallery" && <Gallery handleBack={props.handleBack} handleUpload={props.handleUpload}/>}
         {sectionName === "Voting" && <Voting handleBack={props.handleBack}/>}
         {sectionName === "BreedInfo" && <BreedInfo handleBack={props.handleBack}/>}
         {sectionName === "Breeds" &&
