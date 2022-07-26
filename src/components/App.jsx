@@ -4,6 +4,7 @@ import Start from './Start';
 import "./App.css"
 import Header from "./Header";
 import Section from "./Section";
+import UploadImage from "./UploadImage";
 
 function App() {
 
@@ -31,16 +32,7 @@ function App() {
     }
 
     return (<div style={{position: "relative"}}>
-        {showUpload && (<div className={"upload-background"}>
-            <div className="upload-menu">
-                <button className={"close-btn"} onClick={() => {
-                    setUpload(false)
-                }}/>
-                <p className={"upload-text"}>Upload a .jpg or .png Cat Image</p>
-                <a href="https://thecatapi.com/privacy" className={"small-text rules"}>Any uploads must comply with the
-                    upload guidelines or face deletion.</a>
-            </div>
-        </div>)}
+        {showUpload && <UploadImage setUpload={setUpload}/>}
         <div className="page">
 
             <Menu handleClick={handleClick} sectionName={section}/>

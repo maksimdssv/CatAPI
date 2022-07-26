@@ -17,12 +17,7 @@ function CatsTable(props) {
     function handleSection(section) {
         if (section === "Search") {
             fetch('/breeds').then(res => res.json()).then((dataBreeds) => {
-                console.log(dataBreeds.filter((item) => {
-                    return item.name.includes(props.search)
-                }));
-                setCats(dataBreeds.filter((item) => {
-                    return item.name.includes(props.search)
-                }));
+                setCats(dataBreeds);
             }).then(() => {
                 setLoad(false)
             });
@@ -50,7 +45,9 @@ function CatsTable(props) {
         </div>
         {props.search && <p className="Search">Search results for: <span>{props.search}</span></p>}
         {loading ? <Loader/> :
-            <CatDisplay cats={cats.reverse()} type={type} startState={(type === "favourites")}
+            <CatDisplay cats={props.search ? (cats.filter((item) => {
+                return item.name.toLowerCase().includes(props.search.toLowerCase())
+            })).reverse() : cats.reverse()} type={type} startState={(type === "favourites")}
                         clickAction={props.handleClick}/>}
     </div>
 }
