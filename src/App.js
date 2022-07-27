@@ -4,8 +4,6 @@ const FormData = require('form-data');
 const app = express();
 const fileupload = require('express-fileupload');
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
 app.use(fileupload(undefined));
 const fs = require("fs");
 
@@ -203,20 +201,35 @@ app.get('/favourites', (req, res) => {
     }).catch(err => console.log(err.response.data.message));
 });
 
-app.post("/upload", (req) => {
+app.post("/upload", (req, res) => {
     fs.writeFile("image.jpeg", req.files.img.data, (error) => {
             if (error) {
                 throw error;
             }
         }
     );
+    const headers = {"x-api-key": API_KEY};
     const newFormData = new FormData();
-    const headers = {...baseHeaders};
-    newFormData.append("file", "./image.jpeg");
-    console.log(newFormData);
-    axios.post(baseUrl + "images/upload", newFormData, {headers}).then(res => {
-        console.log(res)
-    }).catch(err => console.log(err.response.data.message));
+    const wait = new Promise((resolve) => {
+        fs.readFile("./image.jpeg", () => {
+            newFormData.append("file", fs.createReadStream("./image.jpeg"));
+            resolve();
+        })
+    });
+    wait.then(() => {
+        axios.request({
+            url: baseUrl + "images/upload",
+            method: 'POST',
+            headers: {...headers},
+            data: newFormData
+        }).then((result) => {
+            const {data, status} = result;
+            res.json({data: data, status: status});
+        })
+            .catch(() => {
+                res.json({status: 400});
+            });
+    });
 })
 
 app.listen(6000, () => {

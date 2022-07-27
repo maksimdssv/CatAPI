@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Section.css';
 import BreedInfo from "./BreedInfo";
 import Voting from "./Voting";

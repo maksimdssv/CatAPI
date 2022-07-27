@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import CatButton from "./CatButton";
 import './CatDisplay.css';
 
@@ -35,12 +35,13 @@ function CatDisplay(props) {
                     }
                     return <div key={index} className={"cat " + additionalClasses} onClick={() => {
                         if (props.type === "Breeds" || props.type === "Search") {
-                            ;
                             getBreedInfo(item.id);
                         }
                     }}>
                         <CatButton type={props.type} item={item} startState={props.startState}/>
                     </div>
+                } else {
+                    return null
                 }
             })}
         </div>;

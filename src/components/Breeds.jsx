@@ -10,10 +10,10 @@ function Breeds(props) {
     const [currentBreed, setCurrentBreed] = useState("");
     const [limit, setLimit] = useState(5);
     const [order, setOrder] = useState('asc');
-    const [breeds, setBreeds] = useState([]);
+    const [breeds] = useState([]);
     const [i, setI] = useState(0);
 
-    function getAllBreeds(props) {
+    function getAllBreeds() {
         fetch('/breeds').then(res => res.json()).then((dataBreeds) => {
             setCats(dataBreeds);
             dataBreeds.forEach((item) => {
