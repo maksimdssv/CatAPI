@@ -6,7 +6,7 @@ The project is fully completed.
 
 # Hosted Version
 
-Hosted version is avaliable at https://glacial-plains-31733.herokuapp.com/
+Hosted version is avaliable at https://floating-ravine-63769.herokuapp.com/
 
 # Main Components
 
