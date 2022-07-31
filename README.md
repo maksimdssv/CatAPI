@@ -4,6 +4,12 @@ This project was made by **Maksim Svishcho** maksimdssv@gmail.com.
 
 The project is fully completed.
 
+# Hosted Version
+
+Hosted version is avaliable at https://glacial-plains-31733.herokuapp.com/
+
+# Main Components
+
 Main components are placed in src/components directory. Brief description of all the components:
 
 ## index.js
@@ -74,7 +80,3 @@ Show likes, dislikes, favourites, or result of searching, depending on which but
 ## UploadImage.jsx
 
 Displays when upload button is clicked. Allows to upload images to CatAPI.
-
-## Hosted version
-
-Will be avaliable soon.
